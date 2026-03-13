@@ -82,6 +82,8 @@ def main():
     strCommand2CommitMessage = default.get('cmd2_commit_message', fallback='')
     strCommand3 = default.get('cmd3', fallback='none')
     strArguments3 = default.get('cmd3_arguments', fallback='none')
+    strCommand4 = default.get('cmd4', fallback='none')
+    strArguments4 = default.get('cmd4_arguments', fallback='none')
 
     if (strVerbose.lower() == 'true'):
         blnVerbose = True
@@ -139,6 +141,9 @@ def main():
 
     strArguments3 = strArguments3.replace("{current_release}", strLatestTag)
     strArguments3 = strArguments3.replace("{new_release}", new_tag)
+
+    strArguments4 = strArguments4.replace("{current_release}", strLatestTag)
+    strArguments4 = strArguments4.replace("{new_release}", new_tag)
 
     if blnVerbose:
         print(strCommand1 + " " + strArguments1)
@@ -226,6 +231,11 @@ def main():
         print(strCommand3 + " " + strArguments3)
 
     runCommand(strCommand3, strArguments3)
+
+    if blnVerbose:
+        print(strCommand4 + " " + strArguments4)
+
+    runCommand(strCommand4, strArguments4)
 
 if __name__== "__main__":
    main()
