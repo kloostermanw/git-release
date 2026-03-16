@@ -10,6 +10,7 @@ import time
 import itertools
 from subprocess import call
 import configparser
+import shlex
 
 blnDone = False
 sourceBranch = 'develop'
@@ -39,7 +40,7 @@ def animate(var):
 def runCommand(strCmd, strArgs):
     arrCmdAndArgs = []
     if strArgs != 'none':
-        arrCmdAndArgs = strArgs.split()
+        arrCmdAndArgs = shlex.split(strArgs)
 
     arrCmdAndArgs.insert(0, strCmd)
     if strCmd != 'none':
