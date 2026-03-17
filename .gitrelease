@@ -45,3 +45,10 @@ cmd3 = none
 # cmd3_arguments belong by cmd3
 # cmd3_arguments = none | --from {current_release} --release {new_release}
 cmd3_arguments = none
+
+# cmd4 that runs after release is pushed to origin
+cmd4 = none
+
+# cmd4_arguments belong by cmd4
+# cmd4_arguments = none
+cmd4_arguments = none
